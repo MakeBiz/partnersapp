@@ -1,19 +1,13 @@
 # Partner Cabinet — partnersapp
 
-Личный кабинет партнёра MakeBiz. Веб-приложение (веб-first), позже — Telegram Mini App на том же API.
+Личный кабинет партнёра MakeBiz. Next.js (App Router), деплой GitHub -> Vercel (partners_app), домен partners.makebiztehnologies.com.
 
-- **Прод-домен:** partners.makebiztehnologies.com
-- **Пайплайн:** GitHub → Vercel (проект `partners_app`)
-- **Стиль:** дизайн-система MakeBiz (Oxygen, палитра #03235F/#013CA4/#074EE8)
-
-## Статус
-`index.html` — фронт-шелл v1 (собранный кабинет на моковых данных): вход/привязка, Обзор, Аналитика (графики+таблицы), Мои сделки, Мои комиссии, Выводы, Реф-ссылка, Материалы, Договор. Деплоится на Vercel как статика (zero-config).
-
-## Дальше
-1. Миграция на Next.js (App Router): те же экраны как React-компоненты.
-2. API-роуты: авторизация (Telegram/email/Google) + слой аккаунтов (связка с контактом в Bitrix по claim-коду).
-3. BFF к gateway партнёрского API (данные из Bitrix только через агентов: Акс → Диспетчер).
-4. Реф-ссылка → основной сайт + трекинг; блок выводов → Финансист.
+## Структура
+- app/ — layout, page (кабинет), globals.css (дизайн-система MakeBiz), api/* — заглушки API (me, deals, commissions, reflink).
+- lib/mock.js — сид-данные для API (позже заменяются на BFF к gateway).
 
 ## Данные (прод)
-Приложение НЕ обращается в Bitrix напрямую. Данные партнёра — через gateway (`agw.makebiztehnologies.com`), который читает Bitrix через Диспетчера. Комиссии — после сверки с Финансистом.
+Приложение НЕ ходит в Bitrix напрямую. Данные партнёра — через gateway (agw.makebiztehnologies.com), который читает Bitrix через Диспетчера. Комиссии — после сверки с Финансистом.
+
+## Дальше
+Авторизация (Telegram/email/Google) + слой аккаунтов (claim-код), BFF к gateway, реф-ссылка на основной сайт + трекинг, блок выводов.
