@@ -5,11 +5,15 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "test": "node --test lib/commissions.test.mjs lib/gateway.test.mjs",
+    "migrate": "node db/migrate.mjs",
+    "migrate:status": "node db/migrate.mjs --status"
   },
   "dependencies": {
     "next": "^14.2.5",
     "react": "18.3.1",
-    "react-dom": "18.3.1"
+    "react-dom": "18.3.1",
+    "pg": "^8.12.0"
   }
 }
