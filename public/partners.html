@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Партнёрская программа MakeBiz — два способа зарабатывать</title>
+<meta name="description" content="Один партнёрский аккаунт, две программы: передавайте бизнес-клиентов на внедрение AI и Битрикс24 (20% с первой оплаты + 10% год) или продвигайте приложения MakeBiz (30% с каждого платежа весь срок жизни клиента).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#03235F; --accent:#013CA4; --accent2:#074EE8; --bg:#F5F7F9; --card:#fff;
+    --line:#E7E7E7; --muted:#6b7590; --faint:#9aa3b8; --yellow:#E6B93B; --red:#C51929;
+    --c1:#EDEEFC; --c2:#E6F1FD; --green:#eaf6ee; --shadow:0 10px 34px rgba(72,89,102,.12); --r:20px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:'Oxygen',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:var(--ink);background:var(--card);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+  h1,h2,h3{line-height:1.15;margin:0}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:none;border-radius:14px;padding:15px 26px;font-family:inherit;font-size:16px;font-weight:700;cursor:pointer;transition:.15s;white-space:nowrap}
+  .btn-p{background:linear-gradient(180deg,#2f6bf0,var(--accent));color:#fff;box-shadow:0 8px 22px rgba(4,54,146,.35)}
+  .btn-p:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(4,54,146,.45)}
+  .btn-o{background:transparent;border:1.5px solid rgba(255,255,255,.5);color:#fff}
+  .btn-o:hover{background:rgba(255,255,255,.12)}
+  .btn-tg{background:linear-gradient(180deg,#2fb0ec,#1f96d3);color:#fff}
+  .btn-sm{padding:11px 18px;font-size:14.5px;border-radius:12px}
+
+  header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .hd{display:flex;align-items:center;gap:16px;height:66px}
+  .hd .nav{display:flex;gap:22px;margin-left:26px}
+  .hd .nav a{font-size:14.5px;font-weight:700;color:var(--muted)}
+  .hd .nav a:hover{color:var(--accent)}
+  .hd .sp{flex:1}
+  .hd .ghost{font-weight:700;color:var(--accent);font-size:14.5px}
+  .hd .cta{padding:10px 18px;font-size:14.5px;border-radius:12px}
+  @media(max-width:900px){.hd .nav{display:none}}
+
+  .hero{background:radial-gradient(1200px 500px at 80% -20%, #0a3f9e 0%, transparent 60%), linear-gradient(160deg,#03235F 0%,#062a6e 55%,#013CA4 120%);color:#fff;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1fr 440px;gap:44px;align-items:center;padding:56px 0 30px}
+  @media(max-width:1000px){.hero-grid{grid-template-columns:1fr;gap:30px;padding:42px 0 24px}}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#dfe8ff;font-weight:700;font-size:13px;padding:7px 14px;border-radius:20px}
+  .hero h1{font-size:46px;font-weight:700;margin:20px 0 0;letter-spacing:-.6px}
+  .hero p.sub{font-size:18px;color:#c9d6f2;max-width:560px;margin:18px 0 0}
+  .cta-row{display:flex;gap:14px;margin-top:28px;flex-wrap:wrap;align-items:center}
+  .kpis{display:flex;gap:14px;padding-bottom:56px;flex-wrap:wrap}
+  .kpi{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:16px 20px;min-width:150px;flex:1}
+  .kpi .n{font-size:30px;font-weight:700}
+  .kpi .n .u{font-size:16px;color:#aebfe6}
+  .kpi .l{font-size:13px;color:#aebfe6;margin-top:2px}
+
+  /* выбор дорожки в первом экране */
+  .trackpick{display:grid;gap:14px}
+  .tp{background:#fff;color:var(--ink);border-radius:20px;padding:22px 24px;box-shadow:0 22px 54px rgba(0,10,40,.34);position:relative}
+  .tp .k{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--muted)}
+  .tp h4{font-size:20px;margin:7px 0 0}
+  .tp .rate{font-size:15px;font-weight:700;color:var(--accent);margin-top:9px}
+  .tp p{color:var(--muted);font-size:13.5px;margin:6px 0 0}
+  .tp .go{margin-top:15px}
+  .tp .badge{position:absolute;top:18px;right:20px;font-size:11.5px;font-weight:700;padding:4px 10px;border-radius:20px}
+
+  section.s{padding:74px 0}
+  section.alt{background:var(--bg)}
+  .ey2{color:var(--accent2);font-weight:700;font-size:14px;letter-spacing:.6px;text-transform:uppercase}
+  h2{font-size:36px;font-weight:700;margin:12px 0 0;letter-spacing:-.4px}
+  .lead{font-size:18px;color:var(--muted);max-width:660px;margin:14px 0 0}
+  .center{text-align:center}.center .lead{margin-left:auto;margin-right:auto}
+  @media(max-width:780px){h2{font-size:27px}section.s{padding:52px 0}.hero h1{font-size:32px}}
+
+  .grid{display:grid;gap:18px;margin-top:38px}
+  .g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}.g2{grid-template-columns:1fr 1fr}
+  @media(max-width:880px){.g3,.g4{grid-template-columns:1fr 1fr}.g2{grid-template-columns:1fr}}
+  @media(max-width:560px){.g3,.g4{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:26px}
+
+  /* две программы */
+  .prog{border-radius:var(--r);padding:28px;border:1px solid var(--line)}
+  .prog.a{background:var(--c2);border-color:#cfe0fb}
+  .prog.b{background:var(--green);border-color:#c9e7d4}
+  .prog .k{font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--muted)}
+  .prog h3{font-size:23px;margin:8px 0 0}
+  .prog .big{font-size:40px;font-weight:700;letter-spacing:-1px;line-height:1.05;margin:14px 0 0}
+  .prog .big .u{font-size:19px}
+  .prog .who{font-size:14.5px;color:var(--muted);margin-top:12px}
+  .prog ul{list-style:none;padding:0;margin:16px 0 0}
+  .prog li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;padding:6px 0}
+  .prog li .ck{flex:0 0 20px;width:20px;height:20px;border-radius:50%;background:#fff;color:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;margin-top:2px}
+
+  /* шаги */
+  .step .num{width:44px;height:44px;border-radius:12px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:19px}
+  .step h3{font-size:17.5px;margin-top:16px}
+  .step p{color:var(--muted);font-size:14.5px;margin:8px 0 0}
+
+  /* калькулятор */
+  .tabs{display:inline-flex;background:#eef1f7;border:1px solid var(--line);border-radius:14px;padding:5px;gap:5px;margin-top:26px}
+  .tabs .tab{border:none;background:transparent;padding:12px 22px;border-radius:10px;font-family:inherit;font-weight:700;font-size:14.5px;color:var(--muted);cursor:pointer;transition:.15s}
+  .tabs .tab.on{background:#fff;color:var(--accent);box-shadow:0 4px 12px rgba(4,54,146,.14)}
+  .calc{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:stretch;margin-top:24px}
+  @media(max-width:880px){.calc{grid-template-columns:1fr}}
+  .fld{margin-bottom:20px}
+  .fld:last-child{margin-bottom:0}
+  .fld label{display:flex;justify-content:space-between;font-weight:700;font-size:14.5px;margin-bottom:10px}
+  .fld label .v{color:var(--accent)}
+  input[type=range]{width:100%;accent-color:var(--accent2);height:6px}
+  .calc-out{background:linear-gradient(160deg,#03235F,#013CA4);color:#fff;border-radius:var(--r);padding:28px;display:flex;flex-direction:column;justify-content:center}
+  .calc-out .l{color:#b9c8ec;font-size:14px}
+  .calc-out .big{font-size:40px;font-weight:700;letter-spacing:-1px;margin-top:4px;line-height:1.05}
+  .calc-out .row{display:flex;justify-content:space-between;gap:12px;padding:13px 0;border-top:1px solid rgba(255,255,255,.15);margin-top:13px;font-size:14.5px}
+  .calc-out .row span{color:#c9d6f2}
+  .disc{color:var(--muted);font-size:13px;margin-top:16px}
+  .hide{display:none}
+
+  /* второй уровень */
+  .lvl{display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:center;margin-top:34px}
+  @media(max-width:780px){.lvl{grid-template-columns:1fr}}
+  .lvl-card{border-radius:16px;padding:22px;background:var(--c1);border:1px solid #d9dcfb}
+  .lvl-card .k{font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--muted)}
+  .lvl-card p{margin:8px 0 0;font-size:15px}
+  .lvl-mid{text-align:center;font-weight:700;color:var(--accent);font-size:26px}
+
+  /* правила */
+  .rule{display:flex;gap:12px;align-items:flex-start;padding:18px 20px}
+  .rule .ck{flex:0 0 26px;width:26px;height:26px;border-radius:50%;background:var(--c2);color:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px}
+  .rule b{font-size:15.5px}.rule p{color:var(--muted);font-size:14px;margin:3px 0 0}
+
+  .feat{display:flex;gap:12px;align-items:flex-start}
+  .feat .ck{flex:0 0 24px;width:24px;height:24px;border-radius:50%;background:var(--c2);color:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:700;margin-top:2px}
+  .feat b{font-size:15.5px}.feat p{color:var(--muted);font-size:14px;margin:3px 0 0}
+
+  .faq{max-width:820px;margin:38px auto 0}
+  .qa{background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:12px;overflow:hidden}
+  .qa .q{display:flex;justify-content:space-between;gap:14px;align-items:center;padding:18px 22px;font-weight:700;font-size:16px;cursor:pointer}
+  .qa .a{max-height:0;overflow:hidden;transition:.25s;color:var(--muted);font-size:15px}
+  .qa .a .inner{padding:0 22px 20px}
+  .qa.open .a{max-height:340px}
+  .qa .chev{transition:.25s;color:var(--faint)}
+  .qa.open .chev{transform:rotate(180deg);color:var(--accent)}
+
+  .reg{background:radial-gradient(900px 400px at 15% 0%, #0a3f9e 0%, transparent 55%), linear-gradient(160deg,#03235F,#013CA4);color:#fff}
+  .reg .card{background:#fff;color:var(--ink);padding:32px}
+  .reg-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center}
+  @media(max-width:860px){.reg-grid{grid-template-columns:1fr}}
+  .reg h2{color:#fff}.reg .lead{color:#c9d6f2}
+  .frm label{display:block;font-weight:700;font-size:13.5px;margin:14px 0 6px}
+  .frm input,.frm select{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:12px;font-family:inherit;font-size:15px;color:var(--ink);background:#fff}
+  .frm input:focus,.frm select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px #e6edff}
+  .divider{display:flex;align-items:center;gap:12px;color:var(--faint);font-size:12.5px;margin:18px 0}
+  .divider::before,.divider::after{content:"";height:1px;background:var(--line);flex:1}
+  .ok{display:none;text-align:center;padding:20px}
+
+  footer{background:#061b45;color:#aebbd8;padding:44px 0 34px}
+  footer .cols{display:flex;gap:40px;flex-wrap:wrap}
+  footer .logo{filter:brightness(0) invert(1)}
+  footer a{color:#cdd8ef}
+  footer .sp{flex:1}
+  .toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:13px 20px;border-radius:14px;font-weight:700;font-size:14px;opacity:0;transition:.25s;pointer-events:none;z-index:60}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap hd">
+    <span id="logoTop"></span>
+    <nav class="nav">
+      <a href="#programs">Две программы</a>
+      <a href="#calc">Калькулятор</a>
+      <a href="#how">Как работает</a>
+      <a href="#cabinet">Кабинет</a>
+      <a href="#faq">Вопросы</a>
+    </nav>
+    <span class="sp"></span>
+    <a href="#" class="ghost" onclick="toast('Вход в кабинет — partners.makebiztehnologies.com');return false;">Войти в кабинет</a>
+    <button class="btn btn-p cta" onclick="toReg()">Стать партнёром</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">● Партнёрская программа MakeBiz</span>
+      <h1>Один аккаунт. Два способа зарабатывать.</h1>
+      <p class="sub">Передавайте бизнес-клиентов на внедрение AI и Битрикс24 или продвигайте приложения MakeBiz по персональным ссылкам. Один кабинет, две программы, прозрачные выплаты.</p>
+      <div class="cta-row">
+        <button class="btn btn-p" onclick="toReg()">Стать партнёром</button>
+        <a href="#programs" class="btn btn-o">Сравнить программы</a>
+      </div>
+    </div>
+
+    <div class="trackpick">
+      <div class="tp">
+        <span class="badge" style="color:var(--accent);background:var(--c2)">услуги</span>
+        <div class="k">У вас есть бизнес-клиенты</div>
+        <h4>Передавайте на внедрение</h4>
+        <div class="rate">20% с первой оплаты каждого клиента + 10% на 12 месяцев</div>
+        <p>AI-агенты, Битрикс24, автоматизация. Мы продаём и внедряем, вы получаете процент.</p>
+        <button class="btn btn-p btn-sm go" onclick="pick('b2b')">Считать доход по услугам</button>
+      </div>
+      <div class="tp">
+        <span class="badge" style="color:#1c7a44;background:var(--green)">приложения</span>
+        <div class="k">У вас есть аудитория или трафик</div>
+        <h4>Продвигайте приложения</h4>
+        <div class="rate">30% с каждого платежа, весь срок жизни клиента</div>
+        <p>Персональные ссылки на продукты MakeBiz. Начисляется автоматически с каждой оплаты.</p>
+        <button class="btn btn-p btn-sm go" onclick="pick('apps')">Считать доход по приложениям</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="kpis">
+      <div class="kpi"><div class="n">20<span class="u">%</span></div><div class="l">с первой оплаты каждого клиента (услуги)</div></div>
+      <div class="kpi"><div class="n">10<span class="u">%</span></div><div class="l">с оплат клиента, 12 месяцев</div></div>
+      <div class="kpi"><div class="n">30<span class="u">%</span></div><div class="l">с приложений, весь срок жизни</div></div>
+      <div class="kpi"><div class="n">+10<span class="u">%</span></div><div class="l">со второго уровня партнёров</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ДВЕ ПРОГРАММЫ -->
+<section class="s" id="programs">
+  <div class="wrap center">
+    <div class="ey2">Две программы</div>
+    <h2>Выбирайте одну или обе</h2>
+    <p class="lead">Один и тот же аккаунт может и передавать крупные проекты, и продвигать приложения. Программы не мешают друг другу: у каждой свои условия и своя атрибуция.</p>
+  </div>
+  <div class="wrap">
+    <div class="grid g2">
+      <div class="prog a">
+        <div class="k">Программа 1 · Услуги</div>
+        <h3>Передача бизнес-клиентов</h3>
+        <div class="big">20<span class="u">%</span> + 10<span class="u">%</span></div>
+        <div class="who">20% с первой оплаты каждого приведённого клиента, затем 10% с его последующих платежей в течение 12 месяцев.</div>
+        <ul>
+          <li><span class="ck">✓</span> Продукты: AI-агенты, Битрикс24, автоматизация, интеграции</li>
+          <li><span class="ck">✓</span> Для агентств, консультантов, интеграторов, тех, у кого есть доступ к бизнесу</li>
+          <li><span class="ck">✓</span> Мы ведём встречи, продажу и внедрение, вы сохраняете отношения с клиентом</li>
+          <li><span class="ck">✓</span> Лид закрепляется за вами, выплата по факту оплаты клиентом</li>
+        </ul>
+      </div>
+      <div class="prog b">
+        <div class="k">Программа 2 · Приложения</div>
+        <h3>Реферальное продвижение</h3>
+        <div class="big">30<span class="u">%</span></div>
+        <div class="who">30% с каждого фактического платежа привлечённого клиента, пока он пользуется приложениями MakeBiz.</div>
+        <ul>
+          <li><span class="ck">✓</span> Продукты: приложения MakeBiz (Solara и другие)</li>
+          <li><span class="ck">✓</span> Для блогеров, авторов каналов, вебмастеров, маркетологов</li>
+          <li><span class="ck">✓</span> Персональные ссылки, начисление автоматически с каждой оплаты</li>
+          <li><span class="ck">✓</span> Доход весь срок жизни клиента, а не только с первого платежа</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- КАЛЬКУЛЯТОР -->
+<section class="s alt" id="calc">
+  <div class="wrap">
+    <div class="ey2">Калькулятор</div>
+    <h2>Посчитайте свой доход</h2>
+    <p class="lead">Прикиньте потенциальный заработок по каждой программе. Цифры ориентировочные, для оценки.</p>
+    <div class="tabs">
+      <button class="tab on" id="tabB2b" onclick="pick('b2b')">Услуги · 20% + 10%</button>
+      <button class="tab" id="tabApps" onclick="pick('apps')">Приложения · 30% lifetime</button>
+    </div>
+
+    <!-- B2B -->
+    <div class="calc" id="calcB2b">
+      <div class="card">
+        <div class="fld">
+          <label>Средний чек первого проекта <span class="v" id="b_checkV">400 000 ₽</span></label>
+          <input type="range" id="b_check" min="100000" max="2000000" step="50000" value="400000" oninput="calcB2b()">
+        </div>
+        <div class="fld">
+          <label>Клиентов приведёте за год <span class="v" id="b_clV">5</span></label>
+          <input type="range" id="b_clients" min="1" max="20" value="5" oninput="calcB2b()">
+        </div>
+        <div class="fld" style="margin-bottom:0">
+          <label>Доплаты клиента за год <span class="v" id="b_repV">50%</span></label>
+          <input type="range" id="b_rep" min="0" max="150" step="10" value="50" oninput="calcB2b()">
+        </div>
+        <p class="disc">Доплаты это последующие оплаты клиента за год: поддержка, доработки, новые модули. Считаются в долях от первого чека, ставка 10%, окно 12 месяцев.</p>
+      </div>
+      <div class="calc-out">
+        <div class="l">Ваш доход за год</div>
+        <div class="big" id="b_total">—</div>
+        <div class="l" id="b_sub">с 5 клиентов</div>
+        <div class="row"><span>20% с первых оплат</span><b id="b_first">—</b></div>
+        <div class="row"><span>10% с доплат (12 мес)</span><b id="b_next">—</b></div>
+      </div>
+    </div>
+
+    <!-- APPS -->
+    <div class="calc hide" id="calcApps">
+      <div class="card">
+        <div class="fld">
+          <label>Цена подписки в месяц <span class="v" id="a_priceV">1 490 ₽</span></label>
+          <input type="range" id="a_price" min="290" max="5000" step="100" value="1490" oninput="calcApps()">
+        </div>
+        <div class="fld">
+          <label>Активных клиентов приведёте <span class="v" id="a_clV">30</span></label>
+          <input type="range" id="a_clients" min="1" max="200" value="30" oninput="calcApps()">
+        </div>
+        <div class="fld" style="margin-bottom:0">
+          <label>Средний срок жизни клиента <span class="v" id="a_lifeV">12 мес</span></label>
+          <input type="range" id="a_life" min="1" max="36" value="12" oninput="calcApps()">
+        </div>
+        <p class="disc">30% с каждого платежа привлечённого клиента весь срок его жизни. Возвраты и отписки уменьшают доход.</p>
+      </div>
+      <div class="calc-out">
+        <div class="l">Ваш доход в месяц</div>
+        <div class="big" id="a_month">—</div>
+        <div class="l" id="a_sub">с 30 клиентов</div>
+        <div class="row"><span>За весь срок жизни</span><b id="a_total">—</b></div>
+        <div class="row"><span>Ставка</span><b>30% с каждого платежа</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- КАК РАБОТАЕТ -->
+<section class="s" id="how">
+  <div class="wrap">
+    <div class="ey2">Как это работает</div>
+    <h2>От рекомендации до вашей выплаты</h2>
+    <p class="lead">Услуги и приложения устроены похоже: вы приводите, всё остальное на нашей стороне, начисления видны в кабинете.</p>
+    <div class="grid g4">
+      <div class="card step"><div class="num">1</div><h3>Делитесь ссылкой или контактом</h3><p>Реф-ссылка на приложение или знакомство с бизнесом — как удобнее.</p></div>
+      <div class="card step"><div class="num">2</div><h3>Клиент закрепляется за вами</h3><p>По ссылке или заявке. Услуги: лид фиксируется за вами. Приложения: клиент привязан к вам с первой оплаты.</p></div>
+      <div class="card step"><div class="num">3</div><h3>Мы делаем работу</h3><p>Услуги: встречи, продажа, внедрение. Приложения: продукт, оплата, поддержка.</p></div>
+      <div class="card step"><div class="num">4</div><h3>Вы получаете выплату</h3><p>Начисляем по факту оплаты клиентом, вывод удобным способом из кабинета.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ВТОРОЙ УРОВЕНЬ -->
+<section class="s alt">
+  <div class="wrap">
+    <div class="ey2">Второй уровень</div>
+    <h2>Стройте свою сеть</h2>
+    <p class="lead">Пригласили в программу другого партнёра — получаете 10% от его вознаграждения. Работает на обеих программах и не уменьшает его выплату.</p>
+    <div class="lvl">
+      <div class="lvl-card"><div class="k">Ваш партнёр заработал</div><p>Он привёл клиента и получил своё вознаграждение по услугам или приложениям</p></div>
+      <div class="lvl-mid">→ +10%</div>
+      <div class="lvl-card"><div class="k">Вы получаете сверху</div><p>10% от его комиссии, отдельной строкой, из нашего бюджета</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ПРАВИЛА -->
+<section class="s">
+  <div class="wrap">
+    <div class="ey2">Правила</div>
+    <h2>Как мы работаем с партнёрами</h2>
+    <p class="lead">Пять правил, по которым живёт программа.</p>
+    <div class="grid g3" id="rulesGrid"></div>
+  </div>
+</section>
+
+<!-- КАБИНЕТ -->
+<section class="s alt" id="cabinet">
+  <div class="wrap">
+    <div class="g2" style="display:grid;gap:34px;align-items:center">
+      <div>
+        <div class="ey2">Личный кабинет</div>
+        <h2>Доход по обеим программам в одном месте</h2>
+        <p class="lead" style="margin-bottom:26px">Один аккаунт, а заработок виден с разбивкой: сколько принесла партнёрская программа, сколько реферальная. Прозрачно по каждому клиенту и каждой операции.</p>
+        <div style="display:grid;gap:18px">
+          <div class="feat"><div class="ck">✓</div><div><b>Разбивка по программам</b><p>Отдельно доход с внедрений и отдельно с приложений, единый баланс к выплате.</p></div></div>
+          <div class="feat"><div class="ck">✓</div><div><b>Прозрачность операций</b><p>Статус каждой сделки и подписки, расчёт вознаграждения по каждому платежу.</p></div></div>
+          <div class="feat"><div class="ck">✓</div><div><b>Реф-ссылки и материалы</b><p>Ссылки на приложения и продукты, презентации, прайсы, шаблоны предложений.</p></div></div>
+          <div class="feat"><div class="ck">✓</div><div><b>Уровни и достижения</b><p>Растите от Сильвера до Платины — выше рейтинг, выше приоритет по лидам.</p></div></div>
+        </div>
+      </div>
+      <div class="card" style="padding:0;overflow:hidden">
+        <div style="background:linear-gradient(160deg,#03235F,#013CA4);padding:22px 24px;color:#fff">
+          <div style="font-size:13px;color:#b9c8ec">Заработано за всё время</div>
+          <div style="font-size:34px;font-weight:700">1 240 000 ₽</div>
+          <div style="display:flex;gap:18px;margin-top:12px;font-size:12.5px;color:#c9d6f2">
+            <div>Партнёрская <b style="color:#fff;display:block;font-size:15px">980 000 ₽</b></div>
+            <div>Реферальная <b style="color:#fff;display:block;font-size:15px">260 000 ₽</b></div>
+          </div>
+        </div>
+        <div style="padding:8px 24px 18px">
+          <div style="display:flex;justify-content:space-between;padding:13px 0;border-bottom:1px solid #eef1f5"><div><b>Внедрение · ООО «Ромашка»</b><div style="color:var(--muted);font-size:12.5px">20% с первой оплаты</div></div><b>120 000 ₽</b></div>
+          <div style="display:flex;justify-content:space-between;padding:13px 0;border-bottom:1px solid #eef1f5"><div><b>Подписки · Solara</b><div style="color:var(--muted);font-size:12.5px">30% · 18 клиентов</div></div><b>8 046 ₽ / мес</b></div>
+          <div style="display:flex;justify-content:space-between;padding:13px 0;border-bottom:1px solid #eef1f5"><div><b>Новый лид · «Гринфилд»</b><div style="color:var(--muted);font-size:12.5px">закреплён за вами</div></div><span style="color:var(--muted);font-size:13px">в работе</span></div>
+          <div style="display:flex;justify-content:space-between;padding:13px 0"><div><b>С партнёра · Д. Орлов</b><div style="color:var(--muted);font-size:12.5px">второй уровень</div></div><b style="color:var(--accent)">18 000 ₽</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="s" id="faq">
+  <div class="wrap center">
+    <div class="ey2">Вопросы</div>
+    <h2>Частые вопросы</h2>
+    <p class="lead">Всё, что обычно спрашивают до первого созвона.</p>
+  </div>
+  <div class="wrap"><div class="faq" id="faqList"></div></div>
+</section>
+
+<!-- РЕГИСТРАЦИЯ -->
+<section class="s reg" id="register">
+  <div class="wrap">
+    <div class="reg-grid">
+      <div>
+        <div class="ey2" style="color:#8fb3ff">Регистрация</div>
+        <h2>Станьте партнёром MakeBiz</h2>
+        <p class="lead">Оставьте заявку — откроем личный кабинет и выдадим реферальные ссылки на обе программы. Это бесплатно и ни к чему не обязывает.</p>
+        <div style="margin-top:22px">
+          <div class="feat" style="color:#dfe8ff;margin-bottom:12px"><div class="ck" style="background:rgba(255,255,255,.15);color:#fff">✓</div><div>Одна регистрация на обе программы</div></div>
+          <div class="feat" style="color:#dfe8ff;margin-bottom:12px"><div class="ck" style="background:rgba(255,255,255,.15);color:#fff">✓</div><div>Договор и официальные выплаты</div></div>
+          <div class="feat" style="color:#dfe8ff"><div class="ck" style="background:rgba(255,255,255,.15);color:#fff">✓</div><div>Прозрачный кабинет с первого дня</div></div>
+        </div>
+      </div>
+      <div class="card">
+        <form class="frm" id="regForm" onsubmit="return submitForm(event)">
+          <label>Ваше имя</label>
+          <input required placeholder="Как к вам обращаться">
+          <label>Телефон или Telegram</label>
+          <input required placeholder="+7… или @username">
+          <label>Email</label>
+          <input type="email" required placeholder="you@company.ru">
+          <label>Что вам ближе</label>
+          <select>
+            <option>Передавать бизнес-клиентов (услуги)</option>
+            <option>Продвигать приложения (аудитория, трафик)</option>
+            <option>Обе программы</option>
+            <option>Пока не определился</option>
+          </select>
+          <button class="btn btn-p" style="width:100%;margin-top:20px" type="submit">Отправить заявку</button>
+          <div class="divider">или быстрее</div>
+          <button class="btn btn-tg" style="width:100%" type="button" onclick="toast('Регистрация через бота @Partners_MakeBiz_bot')">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M9.8 15.5 9.6 19c.4 0 .6-.2.8-.4l1.9-1.8 3.9 2.9c.7.4 1.2.2 1.4-.7l2.5-11.7c.2-1-.4-1.4-1-1.2L4.2 9.9c-1 .4-1 1-.2 1.2l3.9 1.2 9-5.7c.4-.3.8-.1.5.2z"/></svg>
+            Войти через Telegram
+          </button>
+        </form>
+        <div class="ok" id="ok">
+          <div style="font-size:44px">✅</div>
+          <h3 style="margin:10px 0 6px">Заявка отправлена</h3>
+          <p style="color:var(--muted);margin:0">Свяжемся в течение рабочего дня и откроем кабинет.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap cols">
+    <div style="max-width:290px"><span class="logo" id="logoFoot"></span><p style="margin-top:14px;font-size:14px">B2B-решения на базе AI, CRM и автоматизации, плюс собственные приложения. Штаб-квартира — Дубай, работа по России и СНГ.</p></div>
+    <div class="sp"></div>
+    <div style="font-size:14px;line-height:2"><b style="color:#fff">Программы</b><br><a href="#programs">Передача клиентов</a><br><a href="#programs">Приложения</a><br><a href="#cabinet">Кабинет</a></div>
+    <div style="font-size:14px;line-height:2"><b style="color:#fff">Контакты</b><br><a href="#">@Anton_MakeBiz</a><br>Дубай, ОАЭ</div>
+  </div>
+  <div class="wrap" style="margin-top:28px;font-size:13px;color:#7f8db0">© 2026 MakeBiz Group. Партнёрская программа.</div>
+</footer>
+
+<div class="toast" id="toast">Готово</div>
+
+<script>
+const LOGO = '<svg width="112" height="39" viewBox="0 0 117 41" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M32.2077 24.0427H3.48188C1.55887 24.0427 0 25.6016 0 27.5246V36.2294C0 38.1524 1.55887 39.7113 3.48188 39.7113H32.2077C34.1307 39.7113 35.6896 38.1524 35.6896 36.2294V27.5246C35.6896 25.6016 34.1307 24.0427 32.2077 24.0427Z" fill="#013CA4"/><path d="M20.8571 35.7816H18.932L18.4448 34.4388H15.0461L14.547 35.7816H12.6219L15.6878 27.8553H17.8031L20.8571 35.7816ZM17.9813 32.9533L16.7455 29.5428L15.5096 32.9533H17.9813Z" fill="white"/><path d="M23.2766 35.7816H21.5891V27.8553H23.2766V35.7816Z" fill="white"/><path d="M112.727 24.0427H80.084C78.161 24.0427 76.6021 25.6016 76.6021 27.5246V36.2294C76.6021 38.1524 78.161 39.7113 80.084 39.7113H112.727C114.65 39.7113 116.209 38.1524 116.209 36.2294V27.5246C116.209 25.6016 114.65 24.0427 112.727 24.0427Z" fill="#C51929"/><path d="M88.4257 36.0199C85.9331 36.0199 84.0011 34.275 84.0011 31.72C84.0011 29.165 85.9331 27.42 88.4257 27.42C90.2577 27.42 91.317 28.4171 91.9029 29.4516L90.3826 30.1994C90.0335 29.5264 89.2858 28.9904 88.4257 28.9904C86.9176 28.9904 85.8208 30.1496 85.8208 31.72C85.8208 33.2904 86.9176 34.4495 88.4257 34.4495C89.2858 34.4495 90.0335 33.926 90.3826 33.2405L91.9029 33.9759C91.3048 35.0103 90.2577 36.0199 88.4257 36.0199Z" fill="white"/><path d="M99.1883 35.8703H97.1566L95.524 32.9164H94.2279V35.8703H92.4578V27.5571H96.3466C98.0789 27.5571 99.1383 28.6913 99.1383 30.2368C99.1383 31.7075 98.216 32.4927 97.3185 32.7046L99.1883 35.8703ZM96.0846 31.3585C96.7954 31.3585 97.3311 30.9348 97.3311 30.2368C97.3311 29.5388 96.7954 29.1151 96.0846 29.1151H94.2279V31.3585H96.0846Z" fill="white"/><path d="M108.979 35.8703H107.197V30.0498L104.854 35.8703H104.081L101.738 30.0498V35.8703H99.9683V27.5571H102.448L104.467 32.5799L106.486 27.5571H108.979V35.8703Z" fill="white"/><path d="M71.8144 24.0427H40.4772C38.5542 24.0427 36.9953 25.6016 36.9953 27.5246V36.2294C36.9953 38.1524 38.5542 39.7113 40.4772 39.7113H71.8144C73.7374 39.7113 75.2963 38.1524 75.2963 36.2294V27.5246C75.2963 25.6016 73.7374 24.0427 71.8144 24.0427Z" fill="#013CA4"/><path d="M55.8655 36.5266H50.9229V27.42H55.7153C57.4489 27.42 58.3363 28.5259 58.3363 29.741C58.3363 30.8879 57.6265 31.6525 56.7664 31.83C57.7357 31.9802 58.5139 32.9222 58.5139 34.0691C58.5139 35.4344 57.599 36.5266 55.8655 36.5266ZM55.2918 31.0654C55.9473 31.0654 56.3569 30.6558 56.3569 30.0824C56.3569 29.509 55.9473 29.0857 55.2918 29.0857H52.8615V31.0654H55.2918ZM55.3602 34.8473C56.0975 34.8473 56.5345 34.4514 56.5345 33.796C56.5345 33.2226 56.1249 32.7311 55.3602 32.7311H52.8615V34.8473H55.3602Z" fill="white"/><path d="M61.3687 36.5266H59.4301V27.42H61.3687V36.5266Z" fill="white"/><path d="M22.307 21.1654H17.8949V6.75688L12.0945 21.1654H10.1816L4.38117 6.75688V21.1654H0V0.586182H6.1398L11.138 13.0201L16.1363 0.586182H22.307V21.1654Z" fill="#03235F"/><path d="M39.1674 21.1653H35.249V19.6227C34.2309 20.826 32.4722 21.5356 30.5284 21.5356C28.1527 21.5356 25.3451 19.9312 25.3451 16.5991C25.3451 13.1126 28.1527 11.7859 30.5284 11.7859C32.5031 11.7859 34.2617 12.4338 35.249 13.6063V11.6008C35.249 10.089 33.9532 9.1017 31.9786 9.1017C30.3742 9.1017 28.8932 9.68792 27.6282 10.8603L26.1473 8.23779C27.9676 6.63342 30.3125 5.89294 32.6573 5.89294C36.0512 5.89294 39.1674 7.2505 39.1674 11.5391V21.1653ZM32.102 18.8822C33.367 18.8822 34.6011 18.4503 35.249 17.5864V15.7352C34.6011 14.8713 33.367 14.4393 32.102 14.4393C30.5593 14.4393 29.2943 15.2415 29.2943 16.6916C29.2943 18.08 30.5593 18.8822 32.102 18.8822Z" fill="#03235F"/><path d="M57.6169 21.1654H52.7108L48.7619 15.4267L46.9722 17.3396V21.1654H43.0539V0.586182H46.9722V12.8967L52.6186 6.26319H57.4314L51.5387 13.0201L57.6169 21.1654Z" fill="#03235F"/><path d="M66.3882 21.5356C61.8526 21.5356 58.4282 18.4811 58.4282 13.6988C58.4282 9.37938 61.6058 5.89294 66.1415 5.89294C70.5844 5.89294 73.608 9.22509 73.608 14.0999V14.9638H62.5316C62.7784 16.8459 64.2904 18.4194 66.82 18.4194C68.0852 18.4194 69.8436 17.8641 70.8003 16.9384L72.5282 19.4684C71.047 20.826 68.7024 21.5356 66.3882 21.5356ZM69.8131 12.3105C69.7204 10.8912 68.7333 9.00912 66.1415 9.00912C63.7041 9.00912 62.6548 10.8295 62.4698 12.3105H69.8131Z" fill="#03235F"/><path d="M87.6997 21.1654H76.5306V0.586182H87.3603C91.2787 0.586182 93.2843 3.08531 93.2843 5.83125C93.2843 8.42293 91.68 10.1507 89.7362 10.5518C91.9268 10.8912 93.6851 13.0201 93.6851 15.6118C93.6851 18.6971 91.6182 21.1654 87.6997 21.1654ZM86.404 8.82404C87.8847 8.82404 88.8105 7.89842 88.8105 6.60259C88.8105 5.30675 87.8847 4.3503 86.404 4.3503H80.9122V8.82404H86.404ZM86.5581 17.3704C88.2242 17.3704 89.2118 16.4757 89.2118 14.9947C89.2118 13.6989 88.286 12.5882 86.5581 12.5882H80.9122V17.3704H86.5581Z" fill="#03235F"/><path d="M98.8406 4.65884C97.5753 4.65884 96.4955 3.60985 96.4955 2.314C96.4955 1.01816 97.5753 0 98.8406 0C100.136 0 101.185 1.01816 101.185 2.314C101.185 3.60985 100.136 4.65884 98.8406 4.65884ZM100.815 21.1654H96.8968V6.26322H100.815V21.1654Z" fill="#03235F"/><path d="M116.209 21.1654H104.053V18.2343L110.779 9.68795H104.053V6.26318H116.085V9.10172L109.267 17.7407H116.209V21.1654Z" fill="#03235F"/><path d="M98.8719 4.65884C97.6071 4.65884 96.5273 3.60985 96.5273 2.314C96.5273 1.01816 97.6071 0 98.8719 0C100.168 0 101.217 1.01816 101.217 2.314C101.217 3.60985 100.168 4.65884 98.8719 4.65884Z" fill="#C51929"/></svg>';
+
+/* ---------- правила ---------- */
+const rules = [
+  ['Без давления','Не торопим, не уговариваем, не ставим планов.'],
+  ['Вам мы не продаём','Вы партнёр, а не клиент.'],
+  ['Прозрачно','Вы всегда видите свои сделки, подписки и начисления.'],
+  ['Мы о вас помним','Клиент по вашей ссылке закреплён за вами.'],
+  ['По-белому','Договор и официальные выплаты.'],
+];
+
+/* ---------- FAQ ---------- */
+const faq = [
+  ['Чем отличаются две программы?','Услуги — вы передаёте бизнес-клиентов на внедрение AI и Битрикс24, мы продаём и внедряем, вы получаете 20% с первой оплаты и 10% с оплат в течение года. Приложения — вы продвигаете продукты MakeBiz по ссылкам, клиент платит сам, вы получаете 30% с каждого платежа весь срок его жизни.'],
+  ['Как считается 20% и 10% по услугам?','20% начисляется с первой оплаты каждого нового клиента, которого вы привели. Дальше с последующих платежей этого клиента вы получаете 10% в течение 12 месяцев с первой оплаты. Каждый новый клиент — это снова 20% на старте.'],
+  ['Что значит 30% весь срок жизни?','Пока приведённый вами клиент оплачивает приложения MakeBiz, вы получаете 30% с каждого платежа. Отписался и вернулся — привязка сохраняется. Начисление автоматическое, по факту оплаты.'],
+  ['Можно участвовать в обеих программах?','Да, аккаунт один. Можно и передавать крупные проекты на внедрение, и продвигать приложения своей аудитории. В кабинете доход виден с разбивкой по программам.'],
+  ['Что такое второй уровень?','Если вы пригласили в программу другого партнёра, вы получаете 10% от его вознаграждения. Это идёт из нашего бюджета и не уменьшает его выплату.'],
+  ['Когда и как я получу деньги?','После оплаты клиентом и сверки — вывод по запросу из кабинета: на карту физлицу, ИП или юрлицу. По приложениям начисление идёт с каждого платежа автоматически.'],
+  ['Нужен ли договор?','Да, простой партнёрский договор на физлицо или компанию. Пришлём шаблон до старта.'],
+];
+
+const nf = new Intl.NumberFormat('ru-RU');
+const money = (v) => nf.format(Math.round(v)) + ' ₽';
+const plural = (n) => { const a=n%10, b=n%100; return (a===1 && b!==11) ? 'клиента' : 'клиентов'; };
+const plMonth = (n) => { const a=n%10, b=n%100; if(a===1&&b!==11)return 'месяц'; if(a>=2&&a<=4&&(b<10||b>=20))return 'месяца'; return 'месяцев'; };
+
+/* ---------- переключение дорожек ---------- */
+function pick(which){
+  const b2b = which === 'b2b';
+  document.getElementById('calcB2b').classList.toggle('hide', !b2b);
+  document.getElementById('calcApps').classList.toggle('hide', b2b);
+  document.getElementById('tabB2b').classList.toggle('on', b2b);
+  document.getElementById('tabApps').classList.toggle('on', !b2b);
+  document.getElementById('calc').scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+/* ---------- калькулятор услуг ---------- */
+function calcB2b(){
+  const check = +document.getElementById('b_check').value;
+  const cl = +document.getElementById('b_clients').value;
+  const repShare = +document.getElementById('b_rep').value / 100;
+  const first = cl * 0.20 * check;               // 20% с первой оплаты каждого клиента
+  const next  = cl * 0.10 * (check * repShare);  // 10% с доплат за год
+  document.getElementById('b_checkV').textContent = money(check);
+  document.getElementById('b_clV').textContent = cl;
+  document.getElementById('b_repV').textContent = Math.round(repShare*100) + '%';
+  document.getElementById('b_sub').textContent = 'с ' + cl + ' ' + plural(cl);
+  document.getElementById('b_total').textContent = money(first + next);
+  document.getElementById('b_first').textContent = money(first);
+  document.getElementById('b_next').textContent = money(next);
+}
+
+/* ---------- калькулятор приложений ---------- */
+function calcApps(){
+  const price = +document.getElementById('a_price').value;
+  const cl = +document.getElementById('a_clients').value;
+  const life = +document.getElementById('a_life').value;
+  const month = cl * 0.30 * price;
+  const total = month * life;
+  document.getElementById('a_priceV').textContent = money(price);
+  document.getElementById('a_clV').textContent = cl;
+  document.getElementById('a_lifeV').textContent = life + ' ' + plMonth(life);
+  document.getElementById('a_sub').textContent = 'с ' + cl + ' ' + plural(cl);
+  document.getElementById('a_month').textContent = money(month);
+  document.getElementById('a_total').textContent = money(total);
+}
+
+/* ---------- прочее ---------- */
+function toReg(){ document.getElementById('register').scrollIntoView({behavior:'smooth'}); }
+function submitForm(e){
+  e.preventDefault();
+  document.getElementById('regForm').style.display='none';
+  document.getElementById('ok').style.display='block';
+  toast('Заявка отправлена');
+  return false;
+}
+function toggleQa(i){ document.getElementById('qa'+i).classList.toggle('open'); }
+let tt;
+function toast(m){ const el=document.getElementById('toast'); el.textContent=m; el.classList.add('show'); clearTimeout(tt); tt=setTimeout(()=>el.classList.remove('show'),2600); }
+
+document.getElementById('rulesGrid').innerHTML = rules.map(r=>
+  '<div class="card rule"><div class="ck">✓</div><div><b>'+r[0]+'</b><p>'+r[1]+'</p></div></div>'
+).join('');
+document.getElementById('faqList').innerHTML = faq.map((f,i)=>
+  '<div class="qa" id="qa'+i+'"><div class="q" onclick="toggleQa('+i+')">'+f[0]+'<span class="chev">▾</span></div><div class="a"><div class="inner">'+f[1]+'</div></div></div>'
+).join('');
+document.getElementById('logoTop').innerHTML = LOGO;
+document.getElementById('logoFoot').innerHTML = LOGO;
+calcB2b();
+calcApps();
+</script>
+</body>
+</html>
