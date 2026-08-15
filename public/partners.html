@@ -38,7 +38,7 @@
   @media(max-width:900px){.hd .nav{display:none}}
 
   .hero{background:radial-gradient(1200px 500px at 80% -20%, #0a3f9e 0%, transparent 60%), linear-gradient(160deg,#03235F 0%,#062a6e 55%,#013CA4 120%);color:#fff;overflow:hidden}
-  .hero-grid{display:grid;grid-template-columns:1fr 440px;gap:44px;align-items:center;padding:56px 0 30px}
+  .hero-grid{display:grid;grid-template-columns:1fr 468px;gap:40px;align-items:start;padding:60px 0 42px}
   @media(max-width:1000px){.hero-grid{grid-template-columns:1fr;gap:30px;padding:42px 0 24px}}
   .eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#dfe8ff;font-weight:700;font-size:13px;padding:7px 14px;border-radius:20px}
   .hero h1{font-size:46px;font-weight:700;margin:20px 0 0;letter-spacing:-.6px}
@@ -156,6 +156,56 @@
   footer .sp{flex:1}
   .toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:13px 20px;border-radius:14px;font-weight:700;font-size:14px;opacity:0;transition:.25s;pointer-events:none;z-index:60}
   .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+  /* сегменты «Кому подходит» */
+  .seg{display:flex;gap:13px;align-items:flex-start;padding:20px 22px}
+  .seg .ic{flex:0 0 42px;width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16.5px}
+  .seg-b .ic{background:var(--c2);color:var(--accent)}
+  .seg-g .ic{background:var(--green);color:#1c7a44}
+  .seg b{font-size:15.5px;display:block}
+  .seg p{color:var(--muted);font-size:13.8px;margin:4px 0 0}
+
+  /* каталог приложений */
+  .prod{border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);background:#fff;overflow:hidden;margin-top:34px}
+  .prod-top{padding:26px}
+  .pill{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:20px;font-size:12.5px;font-weight:700}
+  .pill-g{background:var(--green);color:#1c7a44}.pill-b{background:var(--c2);color:var(--accent)}
+  .prod .name{font-size:23px;font-weight:700;margin:14px 0 0}
+  .prod .cat{color:var(--muted);font-size:14px;margin-top:4px}
+  .prod .desc{font-size:14.5px;margin:14px 0 0;color:#40507a;max-width:760px}
+  .subs{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .chip{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-size:13px;font-weight:700}
+  .chip span{color:var(--muted);font-weight:400}
+  .chip b{color:#1c7a44}
+  .aud{margin-top:16px;color:var(--muted);font-size:13.5px}
+  .soon-box{border:2px dashed var(--line);border-radius:var(--r);padding:26px;text-align:center;color:var(--muted);background:#fbfcfe}
+  /* калькулятор дохода в hero */
+  .hero-calc{background:#fff;color:var(--ink);border-radius:22px;padding:24px;box-shadow:0 22px 54px rgba(0,10,40,.34)}
+  .hc-h{font-size:19px;font-weight:700}
+  .hc-cap{color:var(--muted);font-size:13px;margin:4px 0 14px}
+  .hc-tabs{display:flex;gap:6px;background:#eef1f7;border:1px solid var(--line);border-radius:12px;padding:5px;margin-bottom:18px}
+  .hc-tab{flex:1;border:none;background:transparent;padding:10px 8px;border-radius:9px;font-family:inherit;font-weight:700;font-size:13.5px;color:var(--muted);cursor:pointer;transition:.15s}
+  .hc-tab.on{background:#fff;color:var(--accent);box-shadow:0 4px 12px rgba(4,54,146,.14)}
+  .hc-lbl{font-weight:700;font-size:13.5px;margin-bottom:9px}
+  .hc-prods{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px}
+  .hc-opt{border:1.5px solid var(--line);border-radius:12px;padding:10px 12px;cursor:pointer;transition:.15s;user-select:none}
+  .hc-opt:hover{border-color:#bcd0f5}
+  .hc-opt.on{border-color:var(--accent2);background:#f5f8ff}
+  .hc-opt .r1{display:flex;align-items:center;gap:8px}
+  .hc-opt .ck{width:18px;height:18px;border-radius:6px;border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;flex:0 0 18px;color:transparent;font-size:12px;font-weight:700}
+  .hc-opt.on .ck{background:var(--accent2);border-color:var(--accent2);color:#fff}
+  .hc-opt .nm{font-weight:700;font-size:13px;line-height:1.2}
+  .hc-opt .pr{color:var(--muted);font-size:12px;margin-top:4px;margin-left:26px}
+  .hc-fld{margin-bottom:16px}
+  .hc-fld label{display:flex;justify-content:space-between;font-weight:700;font-size:14px;margin-bottom:9px}
+  .hc-fld label .v{color:var(--accent)}
+  .hc-res{background:linear-gradient(135deg,#eef3ff,#f7faff);border:1px solid #dbe6ff;border-radius:16px;padding:18px 20px;margin-top:4px}
+  .hc-res-l{color:var(--muted);font-size:13px}
+  .hc-res-big{font-size:32px;font-weight:700;color:var(--accent);letter-spacing:-.6px;line-height:1.1;margin-top:2px}
+  .hc-rows{margin-top:12px;border-top:1px solid #dbe6ff}
+  .hc-row{display:flex;justify-content:space-between;gap:10px;font-size:13px;padding:7px 0}
+  .hc-row span{color:var(--muted)}
+  .hc-row b{white-space:nowrap}
 </style>
 </head>
 <body>
@@ -165,7 +215,7 @@
     <span id="logoTop"></span>
     <nav class="nav">
       <a href="#programs">Две программы</a>
-      <a href="#calc">Калькулятор</a>
+      <a href="#who">Кому подходит</a>
       <a href="#how">Как работает</a>
       <a href="#cabinet">Кабинет</a>
       <a href="#faq">Вопросы</a>
@@ -189,22 +239,36 @@
       </div>
     </div>
 
-    <div class="trackpick">
-      <div class="tp">
-        <span class="badge" style="color:var(--accent);background:var(--c2)">услуги</span>
-        <div class="k">У вас есть бизнес-клиенты</div>
-        <h4>Передавайте на внедрение</h4>
-        <div class="rate">20% с первой оплаты каждого клиента + 10% на 12 месяцев</div>
-        <p>AI-агенты, Битрикс24, автоматизация. Мы продаём и внедряем, вы получаете процент.</p>
-        <button class="btn btn-p btn-sm go" onclick="pick('b2b')">Считать доход по услугам</button>
+    <div class="hero-calc">
+      <div class="hc-h">Калькулятор дохода партнёра</div>
+      <div class="hc-cap">Выберите программу и параметры — увидите доход за год</div>
+      <div class="hc-tabs">
+        <button class="hc-tab on" id="hcBtn_serv" onclick="hcPick('serv')">Услуги</button>
+        <button class="hc-tab" id="hcBtn_apps" onclick="hcPick('apps')">Приложения</button>
+        <button class="hc-tab" id="hcBtn_both" onclick="hcPick('both')">Обе</button>
       </div>
-      <div class="tp">
-        <span class="badge" style="color:#1c7a44;background:var(--green)">приложения</span>
-        <div class="k">У вас есть аудитория или трафик</div>
-        <h4>Продвигайте приложения</h4>
-        <div class="rate">30% с каждого платежа, весь срок жизни клиента</div>
-        <p>Персональные ссылки на продукты MakeBiz. Начисляется автоматически с каждой оплаты.</p>
-        <button class="btn btn-p btn-sm go" onclick="pick('apps')">Считать доход по приложениям</button>
+      <div id="hcServ">
+        <div class="hc-lbl">Что нужно клиенту — сложим средний чек</div>
+        <div class="hc-prods" id="hcProds"></div>
+        <div class="hc-fld">
+          <label>Клиентов за год <span class="v" id="hcServV">5</span></label>
+          <input type="range" id="hcServCl" min="1" max="20" value="5" oninput="hcCalc()">
+        </div>
+      </div>
+      <div id="hcApps" class="hide">
+        <div class="hc-fld">
+          <label>Средний чек покупки <span class="v" id="hcAppChV">1 290 ₽</span></label>
+          <input type="range" id="hcAppCh" min="490" max="4990" step="100" value="1290" oninput="hcCalc()">
+        </div>
+        <div class="hc-fld">
+          <label>Оплат в месяц по ссылке <span class="v" id="hcAppsV">50</span></label>
+          <input type="range" id="hcAppsN" min="5" max="500" step="5" value="50" oninput="hcCalc()">
+        </div>
+      </div>
+      <div class="hc-res">
+        <div class="hc-res-l">Ваш доход ≈</div>
+        <div class="hc-res-big" id="hcTotal">—</div>
+        <div class="hc-rows" id="hcRows"></div>
       </div>
     </div>
   </div>
@@ -256,67 +320,41 @@
   </div>
 </section>
 
-<!-- КАЛЬКУЛЯТОР -->
-<section class="s alt" id="calc">
+<!-- КОМУ ПОДХОДИТ -->
+<section class="s" id="who">
   <div class="wrap">
-    <div class="ey2">Калькулятор</div>
-    <h2>Посчитайте свой доход</h2>
-    <p class="lead">Прикиньте потенциальный заработок по каждой программе. Цифры ориентировочные, для оценки.</p>
+    <div class="ey2">Кому подходит</div>
+    <h2>Найдите себя</h2>
+    <p class="lead">Партнёрами становятся очень разные люди и компании. Посмотрите обе программы — почти каждый находит свою.</p>
     <div class="tabs">
-      <button class="tab on" id="tabB2b" onclick="pick('b2b')">Услуги · 20% + 10%</button>
-      <button class="tab" id="tabApps" onclick="pick('apps')">Приложения · 30% lifetime</button>
+      <button class="tab on" id="segBtnB" onclick="segTab('b')">Программа «Услуги»</button>
+      <button class="tab" id="segBtnG" onclick="segTab('g')">Программа «Приложения»</button>
     </div>
+    <div class="grid g3" id="segB" style="margin-top:26px"></div>
+    <div class="grid g3 hide" id="segG" style="margin-top:26px"></div>
+  </div>
+</section>
 
-    <!-- B2B -->
-    <div class="calc" id="calcB2b">
-      <div class="card">
-        <div class="fld">
-          <label>Средний чек первого проекта <span class="v" id="b_checkV">400 000 ₽</span></label>
-          <input type="range" id="b_check" min="100000" max="2000000" step="50000" value="400000" oninput="calcB2b()">
-        </div>
-        <div class="fld">
-          <label>Клиентов приведёте за год <span class="v" id="b_clV">5</span></label>
-          <input type="range" id="b_clients" min="1" max="20" value="5" oninput="calcB2b()">
-        </div>
-        <div class="fld" style="margin-bottom:0">
-          <label>Доплаты клиента за год <span class="v" id="b_repV">50%</span></label>
-          <input type="range" id="b_rep" min="0" max="150" step="10" value="50" oninput="calcB2b()">
-        </div>
-        <p class="disc">Доплаты это последующие оплаты клиента за год: поддержка, доработки, новые модули. Считаются в долях от первого чека, ставка 10%, окно 12 месяцев.</p>
-      </div>
-      <div class="calc-out">
-        <div class="l">Ваш доход за год</div>
-        <div class="big" id="b_total">—</div>
-        <div class="l" id="b_sub">с 5 клиентов</div>
-        <div class="row"><span>20% с первых оплат</span><b id="b_first">—</b></div>
-        <div class="row"><span>10% с доплат (12 мес)</span><b id="b_next">—</b></div>
+<!-- КАТАЛОГ ПРИЛОЖЕНИЙ -->
+<section class="s alt" id="catalog">
+  <div class="wrap">
+    <div class="ey2">Каталог приложений</div>
+    <h2>Что можно продвигать уже сейчас</h2>
+    <p class="lead">Готовые продукты с оплатой онлайн. По каждому — своя реферальная ссылка, всё привязывается к вам автоматически. Каталог пополняется.</p>
+    <div class="prod">
+      <div class="prod-top">
+        <span class="pill pill-g"><span style="width:7px;height:7px;border-radius:50%;background:currentColor;display:inline-block"></span>Активен · принимает оплаты</span>
+        <span class="pill pill-b" style="margin-left:8px">30% с каждой оплаты</span>
+        <div class="name">Solara <span style="color:var(--faint);font-weight:400;font-size:16px">· mysolara.ru</span></div>
+        <div class="cat">Персональные астрологические разборы · B2C, оплата онлайн</div>
+        <div class="desc">Сервис персональных разборов по дате рождения: солярный прогноз на год, матрица судьбы, совместимость пары, детская матрица и другие. Расчёт планет + AI-интерпретация, оплата через ЮKassa, результат сразу на email. Массовый продукт с невысоким чеком и повторными покупками.</div>
+        <div class="subs" id="subs"></div>
+        <div class="aud"><b>Кому продвигать:</b> телеграм-каналы и блоги про астрологию, психологию, саморазвитие, эзотерику; таргет и посевы. Средний чек ≈ 1 290 ₽ — покупают легко и часто дарят близким.</div>
       </div>
     </div>
-
-    <!-- APPS -->
-    <div class="calc hide" id="calcApps">
-      <div class="card">
-        <div class="fld">
-          <label>Цена подписки в месяц <span class="v" id="a_priceV">1 490 ₽</span></label>
-          <input type="range" id="a_price" min="290" max="5000" step="100" value="1490" oninput="calcApps()">
-        </div>
-        <div class="fld">
-          <label>Активных клиентов приведёте <span class="v" id="a_clV">30</span></label>
-          <input type="range" id="a_clients" min="1" max="200" value="30" oninput="calcApps()">
-        </div>
-        <div class="fld" style="margin-bottom:0">
-          <label>Средний срок жизни клиента <span class="v" id="a_lifeV">12 мес</span></label>
-          <input type="range" id="a_life" min="1" max="36" value="12" oninput="calcApps()">
-        </div>
-        <p class="disc">30% с каждого платежа привлечённого клиента весь срок его жизни. Возвраты и отписки уменьшают доход.</p>
-      </div>
-      <div class="calc-out">
-        <div class="l">Ваш доход в месяц</div>
-        <div class="big" id="a_month">—</div>
-        <div class="l" id="a_sub">с 30 клиентов</div>
-        <div class="row"><span>За весь срок жизни</span><b id="a_total">—</b></div>
-        <div class="row"><span>Ставка</span><b>30% с каждого платежа</b></div>
-      </div>
+    <div class="grid g2" style="margin-top:18px">
+      <div class="soon-box"><div style="font-size:15px;font-weight:700;color:var(--ink);margin-bottom:6px">Скоро новые продукты</div>Готовим ещё веб-приложения MakeBiz. Появятся здесь — с реф-ссылкой и теми же 30%.</div>
+      <div class="soon-box"><div style="font-size:15px;font-weight:700;color:var(--ink);margin-bottom:6px">Есть идея под вашу аудиторию?</div>Есть аудитория под конкретный продукт — напишите, обсудим и запустим.</div>
     </div>
   </div>
 </section>
@@ -488,48 +526,73 @@ const faq = [
 
 const nf = new Intl.NumberFormat('ru-RU');
 const money = (v) => nf.format(Math.round(v)) + ' ₽';
-const plural = (n) => { const a=n%10, b=n%100; return (a===1 && b!==11) ? 'клиента' : 'клиентов'; };
-const plMonth = (n) => { const a=n%10, b=n%100; if(a===1&&b!==11)return 'месяц'; if(a>=2&&a<=4&&(b<10||b>=20))return 'месяца'; return 'месяцев'; };
+const HC = { mode: 'serv' };
+const HC_PRODS = [
+  { n:'Внедрение Bitrix24', p:250000, on:true },
+  { n:'AI-агенты', p:250000, on:true },
+];
+const HC_PAYN = 3, HC_PAYSUM = 195000;   // услуги: доплаты клиента за год
+const HC_APP_RATE = 0.30;                // приложения
 
-/* ---------- переключение дорожек ---------- */
-function pick(which){
-  const b2b = which === 'b2b';
-  document.getElementById('calcB2b').classList.toggle('hide', !b2b);
-  document.getElementById('calcApps').classList.toggle('hide', b2b);
-  document.getElementById('tabB2b').classList.toggle('on', b2b);
-  document.getElementById('tabApps').classList.toggle('on', !b2b);
-  document.getElementById('calc').scrollIntoView({behavior:'smooth', block:'start'});
+function hcDrawProds(){
+  document.getElementById('hcProds').innerHTML = HC_PRODS.map(function(x,i){
+    return '<div class="hc-opt'+(x.on?' on':'')+'" onclick="hcToggle('+i+')">'
+      + '<div class="r1"><span class="ck">✓</span><span class="nm">'+x.n+'</span></div>'
+      + '<div class="pr">'+money(x.p)+'</div></div>';
+  }).join('');
 }
+function hcToggle(i){ HC_PRODS[i].on = !HC_PRODS[i].on; hcDrawProds(); hcCalc(); }
 
-/* ---------- калькулятор услуг ---------- */
-function calcB2b(){
-  const check = +document.getElementById('b_check').value;
-  const cl = +document.getElementById('b_clients').value;
-  const repShare = +document.getElementById('b_rep').value / 100;
-  const first = cl * 0.20 * check;               // 20% с первой оплаты каждого клиента
-  const next  = cl * 0.10 * (check * repShare);  // 10% с доплат за год
-  document.getElementById('b_checkV').textContent = money(check);
-  document.getElementById('b_clV').textContent = cl;
-  document.getElementById('b_repV').textContent = Math.round(repShare*100) + '%';
-  document.getElementById('b_sub').textContent = 'с ' + cl + ' ' + plural(cl);
-  document.getElementById('b_total').textContent = money(first + next);
-  document.getElementById('b_first').textContent = money(first);
-  document.getElementById('b_next').textContent = money(next);
+function hcPick(m){
+  HC.mode = m;
+  document.getElementById('hcServ').classList.toggle('hide', m === 'apps');
+  document.getElementById('hcApps').classList.toggle('hide', m === 'serv');
+  ['serv','apps','both'].forEach(function(x){
+    document.getElementById('hcBtn_'+x).classList.toggle('on', x === m);
+  });
+  hcCalc();
 }
+function hcCalc(){
+  const m = HC.mode;
+  const servCl = +document.getElementById('hcServCl').value;
+  const appCh = +document.getElementById('hcAppCh').value;
+  const appsN = +document.getElementById('hcAppsN').value;
+  document.getElementById('hcServV').textContent = servCl;
+  document.getElementById('hcAppChV').textContent = money(appCh);
+  document.getElementById('hcAppsV').textContent = appsN;
 
-/* ---------- калькулятор приложений ---------- */
-function calcApps(){
-  const price = +document.getElementById('a_price').value;
-  const cl = +document.getElementById('a_clients').value;
-  const life = +document.getElementById('a_life').value;
-  const month = cl * 0.30 * price;
-  const total = month * life;
-  document.getElementById('a_priceV').textContent = money(price);
-  document.getElementById('a_clV').textContent = cl;
-  document.getElementById('a_lifeV').textContent = life + ' ' + plMonth(life);
-  document.getElementById('a_sub').textContent = 'с ' + cl + ' ' + plural(cl);
-  document.getElementById('a_month').textContent = money(month);
-  document.getElementById('a_total').textContent = money(total);
+  const check = HC_PRODS.reduce(function(a,x){ return a + (x.on ? x.p : 0); }, 0);
+  const welcome = 0.20 * check;
+  const ongoing = 0.10 * HC_PAYN * HC_PAYSUM;
+  const perClient = welcome + ongoing;
+  const servYear = servCl * perClient;
+
+  const appMonth = appsN * appCh * HC_APP_RATE;
+  const appsYear = appMonth * 12;
+
+  let total = 0, rows = '';
+  function row(l, v){ return '<div class="hc-row"><span>' + l + '</span><b>' + v + '</b></div>'; }
+
+  if (m === 'serv' || m === 'both'){
+    total += servYear;
+    rows += row('Средний чек проекта', money(check));
+    rows += row('20% с первой оплаты', money(welcome));
+    rows += row('10% с доплат (≈' + HC_PAYN + '×' + money(HC_PAYSUM) + ')', money(ongoing));
+    rows += row('На одного клиента', money(perClient));
+    if (m === 'both') rows += row('Услуги · ' + servCl + ' клиентов', money(servYear));
+  }
+  if (m === 'apps' || m === 'both'){
+    total += appsYear;
+    if (m === 'apps'){
+      rows += row('30% с оплаты ' + money(appCh), money(appCh * HC_APP_RATE));
+      rows += row('Оплат в месяц', appsN);
+      rows += row('Доход в месяц', money(appMonth));
+    } else {
+      rows += row('Приложения · ' + appsN + ' оплат/мес', money(appsYear));
+    }
+  }
+  document.getElementById('hcTotal').textContent = money(total) + ' / год';
+  document.getElementById('hcRows').innerHTML = rows;
 }
 
 /* ---------- прочее ---------- */
@@ -551,10 +614,52 @@ document.getElementById('rulesGrid').innerHTML = rules.map(r=>
 document.getElementById('faqList').innerHTML = faq.map((f,i)=>
   '<div class="qa" id="qa'+i+'"><div class="q" onclick="toggleQa('+i+')">'+f[0]+'<span class="chev">▾</span></div><div class="a"><div class="inner">'+f[1]+'</div></div></div>'
 ).join('');
+/* ---------- сегменты «Кому подходит» ---------- */
+const segServices = [
+  ['A','Маркетинговые агентства','Уже работаете с собственниками. Добавьте AI и CRM в услуги без своей команды внедрения — клиент остаётся за вами.'],
+  ['B','Веб-студии','Сделали сайт — клиенту нужна CRM, телефония и интеграции. Передайте проект нам и получите комиссию.'],
+  ['1С','1С-франчайзи','Большая B2B-база, которой регулярно нужна автоматизация и CRM. Возможен взаимный обмен лидами.'],
+  ['IT','IT-интеграторы','Обслуживаете инфраструктуру и видите задачи по автоматизации и AI изнутри бизнеса клиента.'],
+  ['К','Консультанты и трекеры','Высокое доверие клиента. Вы рекомендуете — мы проводим аудит, продаём и внедряем.'],
+  ['О','Отраслевые эксперты','Знаете процессы ниши: авто, недвижимость, логистика, финансы, медицина, ритейл, франчайзинг.'],
+];
+const segApps = [
+  ['TG','Телеграм-каналы и блоги','Аудитория по теме — делитесь ссылкой на приложение и получаете 30% с каждой оплаты.'],
+  ['▶','YouTube и соцсети','Обзор, формат «до и после», короткое видео продукта в действии.'],
+  ['SEO','Веб-мастера и SEO','Трафик на сайты и каталоги сервисов — монетизируйте реферальными ссылками.'],
+  ['У','Онлайн-школы и авторы курсов','Рекомендуете полезные инструменты своей аудитории и подписчикам.'],
+  ['AI','AI и no-code специалисты','Показываете продукт в деле тем, кто вам доверяет как эксперту.'],
+  ['М','Маркетологи','Ведёте платный трафик — направляйте его на наши продукты по своей ссылке.'],
+];
+function segCard(cls,s){
+  return '<div class="card seg '+cls+'"><div class="ic">'+s[0]+'</div><div><b>'+s[1]+'</b><p>'+s[2]+'</p></div></div>';
+}
+document.getElementById('segB').innerHTML = segServices.map(function(s){return segCard('seg-b',s);}).join('');
+document.getElementById('segG').innerHTML = segApps.map(function(s){return segCard('seg-g',s);}).join('');
+function segTab(t){
+  var b = t === 'b';
+  document.getElementById('segB').classList.toggle('hide', !b);
+  document.getElementById('segG').classList.toggle('hide', b);
+  document.getElementById('segBtnB').classList.toggle('on', b);
+  document.getElementById('segBtnG').classList.toggle('on', !b);
+}
+
+/* ---------- под-продукты Solara (30% партнёру) ---------- */
+const solaraSubs = [
+  ['Солярный разбор', 1490],
+  ['Матрица судьбы', 1290],
+  ['Совместимость пары', 1490],
+  ['Детская матрица', 1490],
+  ['Прогноз на год', 690],
+];
+document.getElementById('subs').innerHTML = solaraSubs.map(function(s){
+  return '<span class="chip">'+s[0]+' <span>·</span> '+money(s[1])+' <span>→ вам</span> <b>'+money(s[1]*0.3)+'</b></span>';
+}).join('');
+
 document.getElementById('logoTop').innerHTML = LOGO;
 document.getElementById('logoFoot').innerHTML = LOGO;
-calcB2b();
-calcApps();
+hcDrawProds();
+hcPick('serv');
 </script>
 </body>
 </html>
