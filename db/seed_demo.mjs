@@ -58,7 +58,7 @@ async function seed(c) {
       `INSERT INTO partners (bitrix_contact_id, refcode, status, tier, payer, pay_ratio,
                              upline_partner_id, activated_at, comm_welcome, comm_base)
        VALUES ($1,$2,$3,$4,$5,$6,$7, now() - interval '6 months', 20, 10)
-       ON CONFLICT (bitrix_contact_id) DO UPDATE SET
+       ON CONFLICT (bitrix_portal, bitrix_contact_id) DO UPDATE SET
          refcode = EXCLUDED.refcode, status = EXCLUDED.status, tier = EXCLUDED.tier,
          payer = EXCLUDED.payer, pay_ratio = EXCLUDED.pay_ratio,
          upline_partner_id = EXCLUDED.upline_partner_id
