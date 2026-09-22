@@ -86,13 +86,15 @@ const server = http.createServer((req, res) => {
     },
   }));
 });
-server.listen(Number(process.env.PORT || 8080), () => log('worker health on', process.env.PORT || 8080));
+// При запуске вместе с сайтом (scripts/start.mjs) порт занят сайтом, health-сервер не поднимаем
+const withHttp = process.env.WORKER_HTTP !== 'off';
+if (withHttp) server.listen(Number(process.env.PORT || 8080), () => log('worker health on', process.env.PORT || 8080));
 
 for (const sig of ['SIGTERM', 'SIGINT']) {
   process.on(sig, async () => {
     log('stopping…');
     stopping = true;
-    server.close();
+    if (withHttp) server.close();
     setTimeout(() => process.exit(0), 5000).unref();
     await pool.end().catch(() => {});
     process.exit(0);

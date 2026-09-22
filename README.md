@@ -63,14 +63,14 @@ npm run dev              # локально
 npm test                 # юнит-тесты
 npm run migrate          # применить миграции
 npm run worker           # воркер очереди
-npm run worker:start     # миграции + воркер (для хостинга)
+npm run start:all        # хостинг одним приложением: миграции + воркер + сайт
 npm run admin:create -- --login anton --name "Антон" --role admin --telegram ник
 npm run tg:login         # разово: строка сессии Telegram (только в секреты сервера!)
 ```
 
 ## Переменные окружения
 
-Полный список с пояснениями: `docs/deploy-timeweb.md`. Основные: `DATABASE_URL`, `DIRECT_URL`, `DB_CA_CERT`, `APP_URL`, `GATEWAY_URL`, `GATEWAY_KEY`, `APP_WEBHOOK_SECRET`; для воркера ещё `TG_*`, `SMTP_URL`, `MAIL_FROM`, `ADMIN_BOOTSTRAP_*`.
+Полный список с пояснениями: `docs/deploy-timeweb.md`. Основные: `DATABASE_URL`, `APP_URL`, `GATEWAY_URL`, `GATEWAY_KEY`, `APP_WEBHOOK_SECRET`, `ADMIN_BOOTSTRAP_*`, `TG_*`, `SMTP_URL`, `MAIL_FROM`. Для базы за PgBouncer ещё `DIRECT_URL` (миграции), для проверки сертификата `DB_CA_CERT`.
 
 ## Состояние
 
