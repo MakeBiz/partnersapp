@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "start:all": "node scripts/start.mjs",
-    "test": "node --test lib/commissions.test.mjs lib/gateway.test.mjs lib/app_commissions.test.mjs lib/yookassa.test.mjs lib/auth.test.mjs lib/partners.test.mjs lib/jobs.test.mjs",
+    "test": "node --test lib/commissions.test.mjs lib/gateway.test.mjs lib/app_commissions.test.mjs lib/yookassa.test.mjs lib/auth.test.mjs lib/partners.test.mjs lib/jobs.test.mjs lib/pgconfig.test.mjs",
     "migrate": "node db/migrate.mjs",
     "migrate:status": "node db/migrate.mjs --status",
     "worker": "node worker/index.mjs",

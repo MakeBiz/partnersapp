@@ -10,6 +10,7 @@
 import crypto from 'node:crypto';
 import pg from 'pg';
 import { hashPassword } from '../lib/auth.js';
+import { pgConfig } from '../lib/pgconfig.js';
 
 const args = Object.fromEntries(process.argv.slice(2).reduce((acc, a, i, arr) => {
   if (a.startsWith('--')) acc.push([a.slice(2), arr[i + 1]]);
@@ -25,9 +26,7 @@ const generated = !process.env.ADMIN_PASSWORD;
 const password = process.env.ADMIN_PASSWORD || crypto.randomBytes(12).toString('base64url');
 
 const url = process.env.DIRECT_URL || process.env.DATABASE_URL;
-const ssl = process.env.DB_SSL === 'off' ? false
-  : process.env.DB_CA_CERT ? { ca: process.env.DB_CA_CERT, rejectUnauthorized: true } : { rejectUnauthorized: false };
-const c = new pg.Client({ connectionString: url, ssl });
+const c = new pg.Client(pgConfig(url));
 await c.connect();
 await c.query(
   `INSERT INTO admin_users (login, password_hash, name, role, email, telegram_username)

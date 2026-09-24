@@ -12,6 +12,7 @@ import { readdir, readFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import pg from 'pg';
+import { pgConfig, dbSchema } from '../lib/pgconfig.js';
 
 const DIR = join(dirname(fileURLToPath(import.meta.url)), 'migrations');
 const LOCK_ID = 8724408372; // произвольный, чтобы два раннера не пересеклись
@@ -28,21 +29,12 @@ function connectionString() {
   return url;
 }
 
-// Сертификат самоподписанный. Если задан DB_CA_CERT — проверяем по-настоящему,
-// иначе шифруем без проверки (слабее: не защищает от MITM).
-function sslConfig() {
-  // Локальная база без TLS (тесты, dev): DB_SSL=off
-  if (process.env.DB_SSL === 'off') return false;
-  if (process.env.DB_CA_CERT) {
-    return { ca: process.env.DB_CA_CERT, rejectUnauthorized: true };
-  }
-  return { rejectUnauthorized: false };
-}
-
 async function main() {
   const status = process.argv.includes('--status');
-  const client = new pg.Client({ connectionString: connectionString(), ssl: sslConfig() });
+  const client = new pg.Client(pgConfig(connectionString()));
   await client.connect();
+  const schema = dbSchema();
+  if (schema) await client.query(`CREATE SCHEMA IF NOT EXISTS ${schema}`);
 
   try {
     await client.query(`
