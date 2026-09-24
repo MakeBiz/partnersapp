@@ -170,7 +170,7 @@ function NewPartner({ portals, payers, onClose, onCreated }) {
           <label className="mb-label">Заметка <span className="opt">(видна только команде)</span></label>
           <textarea className="mb-textarea" value={f.note} onChange={set('note')} placeholder="Откуда пришёл, с какими клиентами работает" />
 
-          <label className="check"><input type="checkbox" checked={f.createChat} onChange={set('createChat')} /> Создать группу в Telegram (ты, ассистент, бот, партнёр)</label>
+          <label className="check"><input type="checkbox" checked={f.createChat} onChange={set('createChat')} /> Создать группу в Telegram (команда MakeBiz, бот и партнёр)</label>
           <label className="check"><input type="checkbox" checked={f.sendEmail} onChange={set('sendEmail')} /> Отправить приглашение в кабинет на почту</label>
 
           {dups && (
